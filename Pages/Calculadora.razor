@@ -1,0 +1,56 @@
+@page "/calculadora"
+
+<div class="row bg-dark" style="border-radius: 50px 50px 0px 0px;">
+    <div class="col text-center">
+        <h1 style="color: white;">Calculadora</h1>
+    </div>
+</div>
+
+<div class="row bg-light text-center" style="border-style: solid; border-color: grey">
+    <div class="col p-5 text-center">
+        <h2>Valores: </h2><br>
+        <p>Número 1: <input @bind="numeroUmCalc"/></p>
+        <p>Número 2: <input @bind="numeroDoisCalc"/></p>
+    </div>
+
+    <div class="col p-5 text-center">
+            <h2>Operações: </h2><br>
+            <div class="btn-group">
+                <button class="btn btn-dark" @onclick="Somar">Adição</button>&nbsp
+                <button class="btn btn-dark" @onclick="Subtrair">Subtração</button>&nbsp
+                <button class="btn btn-dark" @onclick="Multiplicar">Mutliplicação</button>&nbsp
+                <button class="btn btn-dark" @onclick="Dividir">Divisão</button>&nbsp
+            </div>
+    </div>
+
+    <div class="col p-5 text-center">
+        <h2>Resultado: </h2><br>
+        <h3 style="color: lightgreen;">@resultadoCalc</h3>
+    </div>
+</div>
+
+@code {
+    int numeroUmCalc;
+    int numeroDoisCalc;
+    int resultadoCalc;
+
+    public void Somar()
+    {
+        resultadoCalc = numeroUmCalc + numeroDoisCalc;
+    }
+
+    public void Subtrair()
+    {
+        resultadoCalc = numeroUmCalc - numeroDoisCalc;
+    }
+
+    public void Multiplicar()
+    {
+        resultadoCalc = numeroUmCalc * numeroDoisCalc;
+    }
+
+    public void Dividir()
+    {
+        resultadoCalc = numeroUmCalc / numeroDoisCalc;
+    }
+}
